@@ -15,19 +15,22 @@ using System.Windows.Shapes;
 namespace Management
 {
     /// <summary>
-    /// Логика взаимодействия для MainMenuWindow.xaml
+    /// Логика взаимодействия для OrderWindow.xaml
     /// </summary>
-    public partial class MainMenuWindow : Window
+    public partial class OrderWindow : Window
     {
-        public MainMenuWindow()
+        public OrderWindow()
         {
             InitializeComponent();
         }
 
-        private void bt_Orders_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Структура для работы с заказом и его клиентом
+        /// </summary>
+        struct Clients_Orders
         {
-            OrderWindow ord_win = new OrderWindow();
-            ord_win.ShowDialog();
+            //public Clients client { get; set; }
+            //public Orders order { get; set; }
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Management"
         mc:Ignorable="d"
-        Title="MainMenuWindow" Height="450" Width="800">
+        Title="Меню" Height="450" Width="800" ResizeMode="NoResize">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
             <GradientStop Color="White" Offset="0.386"/>
@@ -14,12 +14,12 @@
     </Window.Background>
     <Grid>
         <Calendar HorizontalAlignment="Center" Margin="603,10,10,241" VerticalAlignment="Center"/>
-        <Button x:Name="bt_Orders" Content="Заказы" HorizontalAlignment="Center" Margin="12,14,584,355" VerticalAlignment="Center" Width="196" Height="50"/>
-        <Button x:Name="bt_reports" Content="Отчеты" HorizontalAlignment="Center" Margin="12,69,584,300" VerticalAlignment="Center" Width="196" Height="50"/>
-        <Button x:Name="bt_flowers" Content="Составление Букета" HorizontalAlignment="Center" Margin="12,124,584,245" VerticalAlignment="Center" Width="196" Height="50"/>
-        <Button x:Name="bt_records" Content="Учет товаров" HorizontalAlignment="Center" Margin="12,179,584,190" VerticalAlignment="Center" Width="196" Height="50"/>
-        <Button x:Name="bt_deals" Content="Спецпредложения" HorizontalAlignment="Center" Margin="12,234,584,135" VerticalAlignment="Center" Width="196" Height="50"/>
-        <Button x:Name="bt_route" Content="Маршрут" HorizontalAlignment="Center" Margin="10,289,586,80" VerticalAlignment="Center" Width="196" Height="50"/>
+        <Button x:Name="bt_Orders" Content="Заказы" HorizontalAlignment="Center" Margin="12,14,584,355" VerticalAlignment="Center" Width="196" Height="50" Click="bt_Orders_Click"/>
+        <Button x:Name="bt_reports" Content="Отчеты" HorizontalAlignment="Center" Margin="381,302,215,67" VerticalAlignment="Center" Width="196" Height="50"/>
+        <Button x:Name="bt_flowers" Content="Составление Букета" HorizontalAlignment="Center" Margin="381,357,215,12" VerticalAlignment="Center" Width="196" Height="50"/>
+        <Button x:Name="bt_records" Content="Учет товаров" HorizontalAlignment="Center" Margin="582,247,14,122" VerticalAlignment="Center" Width="196" Height="50"/>
+        <Button x:Name="bt_deals" Content="Спецпредложения" HorizontalAlignment="Center" Margin="582,302,14,67" VerticalAlignment="Center" Width="196" Height="50"/>
+        <Button x:Name="bt_route" Content="Маршрут" HorizontalAlignment="Center" Margin="582,357,14,12" VerticalAlignment="Center" Width="196" Height="50"/>
 
 
     </Grid>
