@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Management"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Авторизация" Height="300" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button x:Name="button_Login" Content="Вход" HorizontalAlignment="Center" Margin="184,209,10,10" VerticalAlignment="Center" Width="100" Height="50"/>
+        <Button x:Name="button_Registration" Content="Зарегистрироваться" HorizontalAlignment="Center" Margin="10,209,124,10" VerticalAlignment="Center" Width="160" Height="50"/>
+        <Label Content="Пожалуйста авторизируйтесь" HorizontalAlignment="Center" Margin="10,10,10,219" VerticalAlignment="Center" Width="274" FontWeight="Bold" FontSize="16" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="textbox_Login" HorizontalAlignment="Center" Height="30" Margin="84,88,10,151" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black"/>
+        <PasswordBox x:Name="textbox_Password" Height="30" HorizontalAlignment="Center" Margin="84,123,10,116" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Логин:" HorizontalAlignment="Center" Margin="10,88,215,151" VerticalAlignment="Center" Height="30" Width="69" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Пароль:" HorizontalAlignment="Center" Margin="10,123,215,116" VerticalAlignment="Center" Height="30" Width="69" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
     </Grid>
 </Window>
