@@ -20,7 +20,5 @@
         <Button x:Name="bt_records" Content="Учет товаров" HorizontalAlignment="Center" Margin="582,247,14,122" VerticalAlignment="Center" Width="196" Height="50"/>
         <Button x:Name="bt_deals" Content="Спецпредложения" HorizontalAlignment="Center" Margin="582,302,14,67" VerticalAlignment="Center" Width="196" Height="50"/>
         <Button x:Name="bt_route" Content="Маршрут" HorizontalAlignment="Center" Margin="582,357,14,12" VerticalAlignment="Center" Width="196" Height="50"/>
-
-
     </Grid>
 </Window>

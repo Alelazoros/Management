@@ -11,12 +11,19 @@ namespace Management
     /// Логика взаимодействия для RegistrationWindow.xaml
     public partial class RegistrationWindow : Window
     {
-        UsersRepository oUsersRepository;
-
         public RegistrationWindow()
         {
             InitializeComponent();
         }
+
+        UsersRepository oUsersRepository;
+
+        /// Выполнение операций при загрузке окна
+        private async void Window_Loaded_Reg(object sender, RoutedEventArgs e)
+        {
+            await Initialize_Database();
+        }
+
         private async Task Initialize_Database()
         {
             DBConnection oDBConnection = new DBConnection();
@@ -25,10 +32,7 @@ namespace Management
 
             oUsersRepository = new UsersRepository(oDBConnection);
         }
-        private async void reg_form_Loaded(object sender, RoutedEventArgs e)
-        {
-            await Initialize_Database();
-        }
+
 
         /// Регистрация нового пользователя в системе
         public async void Registration(string login, string password)
@@ -41,11 +45,8 @@ namespace Management
         }
 
         /// Проверка на уникальность имени пользователя системы
-
-        /// <returns>true, если такого логина нет или false, если такое имя существует</returns>
         public async Task<bool> Check_Login(string login)
         {
-            //----------------------Пока выходят проблемы на этой точке-----------------------------
             List<Users> users = await oUsersRepository.Select_All_Users_Async();
 
             foreach (var u in users)
