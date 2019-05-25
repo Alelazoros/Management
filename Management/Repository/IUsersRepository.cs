@@ -1,10 +1,13 @@
-﻿using Management.DataModel;
-using System.Threading.Tasks;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Management.DataModel;
 
 namespace Management.Repository
 {
-    internal interface IUsersRepository
+    interface IUsersRepository
     {
         Task Insert_Users_Async(Users users);
         Task Update_Users_Async(Users users);

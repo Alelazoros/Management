@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using SQLite;
 using Management.DataAccess;
 using Management.DataModel;
-using SQLite;
 
 namespace Management.Repository
 {
@@ -40,5 +43,4 @@ namespace Management.Repository
             return await conn.QueryAsync<Users>(query);
         }
     }
-
 }

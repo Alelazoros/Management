@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-using System.IO;
+﻿using System.IO;
 
 namespace Management
 {
@@ -17,7 +10,7 @@ namespace Management
 
         public bool Set_DB_Path( )
         {
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            System.Windows.Forms.FolderBrowserDialog fbd = new System.Windows.Forms.FolderBrowserDialog();
 
             fbd.SelectedPath = Directory.GetCurrentDirectory();
 

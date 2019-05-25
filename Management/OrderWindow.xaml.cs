@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using Management.DataModel;
+using Management.Repository;
 
 namespace Management
 {
@@ -24,13 +14,29 @@ namespace Management
             InitializeComponent();
         }
 
-        /// <summary>
         /// Структура для работы с заказом и его клиентом
-        /// </summary>
         struct Clients_Orders
         {
-            //public Clients client { get; set; }
-            //public Orders order { get; set; }
+            public Clients client { get; set; }
+            public Orders order { get; set; }
         }
+
+        /// Структура для работы с корзиной и её букетами
+        struct Carts_Bouquets
+        {
+            public Carts cart { get; set; }
+            public Bouquets bouquet { get; set; }
+        }
+
+        bool first_launch = true;
+
+        ClientsRepository oClientsRepository;   //
+        OrdersRepository oOrdersRepository;     //  Контроллеры
+        CartsRepository oCartsRepository;       //  Таблиц
+        BouquetsRepository oBouquetsRepository; //
+        CardsRepository oCardsRepository;       //
+        PaymentsRepository oPaymentsRepository;
+
+        SQLite.SQLiteAsyncConnection conn;      //  Прямой коннект к БД для выдачи записей из таблиц по ID
     }
 }
