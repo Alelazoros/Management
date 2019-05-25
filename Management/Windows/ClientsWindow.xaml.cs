@@ -12,22 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Management
+namespace Management.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для MainMenuWindow.xaml
+    /// Логика взаимодействия для ClientsWindow.xaml
     /// </summary>
-    public partial class MainMenuWindow : Window
+    public partial class ClientsWindow : Window
     {
-        public MainMenuWindow()
+        public ClientsWindow()
         {
             InitializeComponent();
         }
 
-        private void bt_Orders_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            OrderWindow ord_win = new OrderWindow();
-            ord_win.ShowDialog();
+
         }
     }
 }

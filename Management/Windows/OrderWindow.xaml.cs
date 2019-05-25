@@ -4,9 +4,8 @@ using Management.Repository;
 
 namespace Management
 {
-    /// <summary>
+
     /// Логика взаимодействия для OrderWindow.xaml
-    /// </summary>
     public partial class OrderWindow : Window
     {
         public OrderWindow()
@@ -39,4 +38,8 @@ namespace Management
 
         SQLite.SQLiteAsyncConnection conn;      //  Прямой коннект к БД для выдачи записей из таблиц по ID
     }
+
+
+
+
 }

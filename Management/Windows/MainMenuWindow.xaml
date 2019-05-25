@@ -13,8 +13,9 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-        <Calendar HorizontalAlignment="Center" Margin="603,10,10,241" VerticalAlignment="Center"/>
-        <Button x:Name="bt_Orders" Content="Заказы" HorizontalAlignment="Center" Margin="12,14,584,355" VerticalAlignment="Center" Width="196" Height="50" Click="bt_Orders_Click"/>
+        <Calendar HorizontalAlignment="Center" Margin="615,0,0,253" VerticalAlignment="Center"/>
+        <Button x:Name="bt_clients" Content="Клиенты" HorizontalAlignment="Center" Margin="10,10,588,361" VerticalAlignment="Center" Width="196" Height="50" Click="bt_Clients_Click"/>
+        <Button x:Name="bt_orders" Content="Заказы" HorizontalAlignment="Center" Margin="307,218,291,153" VerticalAlignment="Center" Width="196" Height="50" Click="bt_Orders_Click"/>
         <Button x:Name="bt_reports" Content="Отчеты" HorizontalAlignment="Center" Margin="381,302,215,67" VerticalAlignment="Center" Width="196" Height="50"/>
         <Button x:Name="bt_flowers" Content="Составление Букета" HorizontalAlignment="Center" Margin="381,357,215,12" VerticalAlignment="Center" Width="196" Height="50"/>
         <Button x:Name="bt_records" Content="Учет товаров" HorizontalAlignment="Center" Margin="582,247,14,122" VerticalAlignment="Center" Width="196" Height="50"/>
