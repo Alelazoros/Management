@@ -1,11 +1,11 @@
-﻿<Window x:Class="Management.Windows.ClientsWindow"
+﻿<Window x:Class="Management.ClientsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Management.Windows"
+        xmlns:local="clr-namespace:Management"
         mc:Ignorable="d"
-        Title="Клиенты" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Клиенты" Height="450" Width="800" ResizeMode="NoResize" Loaded="Window_Loaded_Reg">
     <Grid>
         <TextBox HorizontalAlignment="Left" Height="41" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="469">
             <TextBox.Style>
@@ -31,113 +31,159 @@
                 </Style>
             </TextBox.Style>
         </TextBox>
-        <ListView HorizontalAlignment="Left" Height="350" Margin="10,61,0,0" VerticalAlignment="Top" Width="469">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
+        <ListView x:Name="listview_Clients_Cards" HorizontalAlignment="Left" Height="350" Margin="10,61,0,0" VerticalAlignment="Top" Width="469" MouseLeftButtonUp="listview_MouseLeftButtonUp">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <Border BorderBrush="Black" BorderThickness="1" Margin="1">
+
+                        <StackPanel Orientation="Horizontal" Margin="5">
+
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="ФИО:" Width="128"></TextBlock>
+                                    <TextBlock Text="{Binding client.full_name}" ></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Адрес:" Width="128"></TextBlock>
+                                    <TextBlock Text="{Binding client.address}" ></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Номер телефона:" Width="128"></TextBlock>
+                                    <TextBlock Text="{Binding client.phone_number}" ></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Email:" Width="128"></TextBlock>
+                                    <TextBlock Text="{Binding client.email}" ></TextBlock>
+                                </StackPanel>
+                                <!--
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Баллы:" Width="128"></TextBlock>
+                                    <TextBlock Text="{Binding card.bonus_card_points}" ></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Referal_Numb:" Width="128"></TextBlock>
+                                    <TextBlock Text="{Binding client.referal_number}" ></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Пригласил:" Width="128"></TextBlock>
+                                    <TextBlock Text="{Binding client.referer_id}" ></TextBlock>
+                                </StackPanel>
+                                -->
+                                
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Border>
+
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
-        <TextBox HorizontalAlignment="Center" Height="23" Margin="484,61,10,337" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="300" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <TextBox.Style>
-                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
-                    <Style.Resources>
-                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
-                            <VisualBrush.Visual>
-                                <Label Content="ФИО" Foreground="LightGray" />
-                            </VisualBrush.Visual>
-                        </VisualBrush>
-                    </Style.Resources>
-                    <Style.Triggers>
-                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
-                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                        </Trigger>
-                        <Trigger Property="Text" Value="{x:Null}">
-                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                        </Trigger>
-                        <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="Background" Value="White" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBox.Style>
-        </TextBox>
-        <TextBox HorizontalAlignment="Center" Height="23" Margin="484,89,10,309" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="300" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <TextBox.Style>
-                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
-                    <Style.Resources>
-                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
-                            <VisualBrush.Visual>
-                                <Label Content="Адрес" Foreground="LightGray" />
-                            </VisualBrush.Visual>
-                        </VisualBrush>
-                    </Style.Resources>
-                    <Style.Triggers>
-                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
-                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                        </Trigger>
-                        <Trigger Property="Text" Value="{x:Null}">
-                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                        </Trigger>
-                        <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="Background" Value="White" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBox.Style>
-        </TextBox>
-        <TextBox HorizontalAlignment="Center" Height="23" Margin="484,117,10,281" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="300" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <TextBox.Style>
-                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
-                    <Style.Resources>
-                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
-                            <VisualBrush.Visual>
-                                <Label Content="Телефон" Foreground="LightGray" />
-                            </VisualBrush.Visual>
-                        </VisualBrush>
-                    </Style.Resources>
-                    <Style.Triggers>
-                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
-                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                        </Trigger>
-                        <Trigger Property="Text" Value="{x:Null}">
-                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                        </Trigger>
-                        <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="Background" Value="White" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBox.Style>
-        </TextBox>
-        <TextBox HorizontalAlignment="Center" Height="23" Margin="484,145,10,253" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="300" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <TextBox.Style>
-                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
-                    <Style.Resources>
-                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
-                            <VisualBrush.Visual>
-                                <Label Content="Почта" Foreground="LightGray" />
-                            </VisualBrush.Visual>
-                        </VisualBrush>
-                    </Style.Resources>
-                    <Style.Triggers>
-                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
-                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                        </Trigger>
-                        <Trigger Property="Text" Value="{x:Null}">
-                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                        </Trigger>
-                        <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="Background" Value="White" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBox.Style>
-        </TextBox>
-        <Label Content="Создать нового клиенты" HorizontalAlignment="Center" Margin="484,10,10,370" VerticalAlignment="Center" Width="300" Height="41" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14"/>
-        <Button Content="Создать" HorizontalAlignment="Center" Height="30" Margin="484,173,10,218" VerticalAlignment="Center" Width="300" Background="#FF06FF3E"/>
-        <Button Content="Удалить" HorizontalAlignment="Center" Height="30" Margin="484,243,10,148" VerticalAlignment="Center" Width="300" Background="#FFFD6C6C"/>
-        <Button Content="Изменить" HorizontalAlignment="Center" Height="30" Margin="484,208,10,183" VerticalAlignment="Center" Width="300" Background="#FFF7FF48"/>
+        <Grid x:Name="grid" Margin="484,10,10,148">
+            <TextBox x:Name="textbox_Full_Name" HorizontalAlignment="Center" Height="23" Margin="0,51,0,189" TextWrapping="Wrap" VerticalAlignment="Center" Width="300" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding client.full_name}">
+                <TextBox.Style>
+                    <Style xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="{x:Type TextBox}">
+                        <Style.Resources>
+                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="ФИО" Foreground="LightGray" />
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <TextBox x:Name="textbox_Address" HorizontalAlignment="Center" Height="23" Margin="0,79,0,161" TextWrapping="Wrap" VerticalAlignment="Center" Width="300" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding client.address}">
+                <TextBox.Style>
+                    <Style xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="{x:Type TextBox}">
+                        <Style.Resources>
+                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="Адрес" Foreground="LightGray" />
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <TextBox x:Name="textbox_Phone_Number" HorizontalAlignment="Center" Height="23" Margin="0,107,0,133" TextWrapping="Wrap" VerticalAlignment="Center" Width="300" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding client.phone_number}">
+                <TextBox.Style>
+                    <Style xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="{x:Type TextBox}">
+                        <Style.Resources>
+                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="Телефон" Foreground="LightGray" />
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <TextBox x:Name="textbox_Email" HorizontalAlignment="Center" Height="23" Margin="0,135,0,105" TextWrapping="Wrap" VerticalAlignment="Center" Width="300" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding client.email}">
+                <TextBox.Style>
+                    <Style xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="{x:Type TextBox}">
+                        <Style.Resources>
+                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="Почта" Foreground="LightGray" />
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <Label Content="Создать нового клиенты" HorizontalAlignment="Center" Margin="0,0,0,222" VerticalAlignment="Center" Width="300" Height="41" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14"/>
+
+            <Button Content="Создать" HorizontalAlignment="Center" Height="30" Margin="0,163,0,70" VerticalAlignment="Center" Width="300" Background="#FF06FF3E" Click="button_Create_Click"/>
+            <Button Content="Удалить" HorizontalAlignment="Center" Height="30" Margin="0,233,0,0" VerticalAlignment="Center" Width="300" Background="#FFFD6C6C" />
+            <Button Content="Изменить" HorizontalAlignment="Center" Height="30" Margin="0,198,0,35" VerticalAlignment="Center" Width="300" Background="#FFF7FF48" Click="button_Update_Click"/>
+
+        </Grid>
 
     </Grid>
 </Window>

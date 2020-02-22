@@ -85,9 +85,6 @@ namespace Management.DataAccess
             ----------------
             await conn.CreateTableAsync<Accessories>();
             await conn.CreateTableAsync<Bouquets>();
-            await conn.CreateTableAsync<Carts>();
-            await conn.CreateTableAsync<Cards>();
-            await conn.CreateTableAsync<Clients>();
             await conn.CreateTableAsync<Constants>();
             await conn.CreateTableAsync<Contents>();
             await conn.CreateTableAsync<Discounts>();
@@ -97,6 +94,10 @@ namespace Management.DataAccess
             await conn.CreateTableAsync<Payments>();
             ----------------
             */
+
+            await conn.CreateTableAsync<Carts>();
+            await conn.CreateTableAsync<Cards>();
+            await conn.CreateTableAsync<Clients>();
             await conn.CreateTableAsync<Users>();
         }
 

@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Management.Repository;
+using Management.DataAccess;
+using Management.DataModel;
 
 namespace Management
 {
@@ -23,14 +16,14 @@ namespace Management
             InitializeComponent();
         }
 
-
+/*
         /// Переход к окну создания нового клиента
         private void button_New_Client_Click(object sender, RoutedEventArgs e)
         {
             NewClientWindow ncw = new NewClientWindow();
             ncw.ShowDialog();
         }
-
+*/
         /// Переход к окну "Заказы"
         private void bt_Orders_Click(object sender, RoutedEventArgs e)
         {
@@ -44,5 +37,6 @@ namespace Management
             ClientsWindow cl_win = new ClientsWindow();
             cl_win.ShowDialog();
         }
+    
     }
 }

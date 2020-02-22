@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Management"
         mc:Ignorable="d"
-        Title="Авторизация" Height="320" Width="320" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
+        Title="Авторизация" Height="320" Width="480" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FFF1FF96" Offset="1"/>
@@ -16,10 +16,10 @@
         <Button x:Name="button_Login" Content="Вход" HorizontalAlignment="Center" Margin="184,209,10,10" VerticalAlignment="Center" Width="100" Height="50" Click="button_Login_Click"/>
         <Button x:Name="button_Registration" Content="Зарегистрироваться" HorizontalAlignment="Center" Margin="10,209,124,10" VerticalAlignment="Center" Width="160" Height="50" Click="button_Registration_Click"/>
         <Label Content="Пожалуйста авторизируйтесь" HorizontalAlignment="Center" Margin="10,10,10,219" VerticalAlignment="Center" Width="274" FontWeight="Bold" FontSize="16" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="textbox_Login" HorizontalAlignment="Center" Height="30" Margin="84,88,10,151" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <PasswordBox x:Name="passwordbox_Password" Height="30" HorizontalAlignment="Center" Margin="84,123,10,116" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label Content="Логин:" HorizontalAlignment="Center" Margin="10,88,215,151" VerticalAlignment="Center" Height="30" Width="69" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label Content="Пароль:" HorizontalAlignment="Center" Margin="10,123,215,116" VerticalAlignment="Center" Height="30" Width="69" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="textbox_Login" HorizontalAlignment="Center" Height="30" Margin="162,78,88,161" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <PasswordBox x:Name="passwordbox_Password" Height="30" HorizontalAlignment="Center" Margin="162,134,88,105" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Логин:" HorizontalAlignment="Center" Margin="88,78,293,161" VerticalAlignment="Center" Height="30" Width="69" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Пароль:" HorizontalAlignment="Center" Margin="88,134,293,105" VerticalAlignment="Center" Height="30" Width="69" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="label_Attention" Content="Неверный логин или пароль" HorizontalAlignment="Center" Margin="10,167,10,76" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="274" FontSize="14" Foreground="#FFFD0000" FontWeight="Bold" Visibility="Hidden" />
     </Grid>
 </Window>

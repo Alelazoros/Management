@@ -13,6 +13,9 @@ namespace Management.DataModel
         public string full_name { get; set; }
 
         [NotNull]
+        public string address { get; set; }
+
+        [NotNull]
         public string phone_number { get; set; }
 
         public string email { get; set; }
@@ -28,9 +31,10 @@ namespace Management.DataModel
 
         public Clients() { }
 
-        public Clients(string full_name, string phone_number, string email, int cards_id, int referer_id = -1)
+        public Clients(string full_name, string address, string phone_number, string email, int cards_id, int referer_id = -1)
         {
             this.full_name = full_name;
+            this.address = address;
             this.phone_number = phone_number;
             this.email = email;
             this.referal_number = Guid.NewGuid().ToString();
